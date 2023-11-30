@@ -8,7 +8,7 @@ const {connection} = require("../config.db");
 
 //Utilizando el método Get 
 const getProductos = (request, response) => {
-    connection.query("SELECT * FROM productos where estado=1", 
+    connection.query("SELECT * FROM productos", 
     (error, results) => {
         if(error)
             throw error;
