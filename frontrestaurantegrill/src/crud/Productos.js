@@ -119,8 +119,20 @@ const Productos = () => {
         ).then(() => {
           getProductos();
           limpiar();
-          Swal.fire("Eliminado!", val.descripcion_producto + " Fue eliminado.", "success");
-        });        
+          Swal.fire({
+            icon:'success',
+            title: val.descripcion_producto+' fue eliminado.',
+            showConfirmButton: false,
+            timer:2000
+          });
+        }).catch(function(error){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No se logró eliminar el producto sube el BACK!!',
+                footer: JSON.parse(JSON.stringify(error)).message==="Network Error"?"Intente más tarde":JSON.parse(JSON.stringify(error)).message
+            })
+        })       
       }
     });
   };
