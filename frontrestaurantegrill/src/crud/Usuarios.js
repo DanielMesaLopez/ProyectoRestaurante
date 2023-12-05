@@ -130,7 +130,7 @@ const Usuarios = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Axios.delete(
-          `http://localhost:3300/usuarios/${val.id_productos}`
+          `http://localhost:3300/usuarios/${val.id_usuarios}`
         ).then(() => {
           getUsuarios();
           limpiar();
@@ -298,7 +298,7 @@ const Usuarios = () => {
               correo_usuario:
             </span>
             <input
-              type="number"
+              type="text"
               value={correo_usuario}
               onChange={(event) => {
                 setCorreo_usuario(event.target.value);

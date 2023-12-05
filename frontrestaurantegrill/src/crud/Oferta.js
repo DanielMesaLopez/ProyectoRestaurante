@@ -126,7 +126,7 @@ const Oferta = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Axios.delete(
-          `http://localhost:3300/oferta/${val.id_productos}`
+          `http://localhost:3300/oferta/${val.id_oferta}`
         ).then(() => {
           getOferta();
           limpiar();
@@ -192,13 +192,13 @@ const Oferta = () => {
               Nombre de Oferta:
             </span>
             <input
-              type="number"
+              type="text"
               value={nombre_oferta}
               onChange={(event) => {
                 setNombre_oferta(event.target.value);
               }}
               className="form-control"
-              placeholder="Ingrese Id de Rol"
+              placeholder="Ingrese el nombre de la oferta"
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
@@ -209,7 +209,7 @@ const Oferta = () => {
               Descripcion:
             </span>
             <input
-              type="number"
+              type="text"
               value={descripcion}
               onChange={(event) => {
                 setDescripcion(event.target.value);
@@ -243,7 +243,7 @@ const Oferta = () => {
               fecha_inicio:
             </span>
             <input
-              type="text"
+              type="datetime"
               value={fecha_inicio}
               onChange={(event) => {
                 setFecha_inicio(event.target.value);
@@ -260,7 +260,7 @@ const Oferta = () => {
               fecha_fin:
             </span>
             <input
-              type="number"
+              type="datetime"
               value={fecha_fin}
               onChange={(event) => {
                 setFecha_fin(event.target.value);
@@ -294,13 +294,13 @@ const Oferta = () => {
               imagen:
             </span>
             <input
-              type="number"
+              type="text"
               value={imagen}
               onChange={(event) => {
                 setImagen(event.target.value);
               }}
               className="form-control"
-              placeholder="Ingrese el correo del usuario"
+              placeholder="Ingrese la imagen"
               aria-label="Username"
               aria-describedby="basic-addon1"
             />

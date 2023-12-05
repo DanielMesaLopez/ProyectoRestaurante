@@ -63,7 +63,7 @@ const Ciudad = () => {
         title: "<strong>Actualizacion exitosa!</strong>",
         html:
           "<i>La Ciudad <strong>" +
-          cobertura +
+          nombre_ciudad +
           "</strong> fue actualizado con exito!</i>",
         icon: "success",
         timer: 3000,
@@ -95,7 +95,7 @@ const Ciudad = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Axios.delete(
-          `http://localhost:3300/ciudad/${val.id_productos}`
+          `http://localhost:3300/ciudad/${val.id_ciudad}`
         ).then(() => {
           getCiudad();
           limpiar();
@@ -144,13 +144,13 @@ const Ciudad = () => {
               NOMBRE_CIUDAD:
             </span>
             <input
-              type="number"
+              type="text"
               value={nombre_ciudad}
               onChange={(event) => {
                 setNombre_ciudad(event.target.value);
               }}
               className="form-control"
-              placeholder="Ingrese Id de categoria"
+              placeholder="Ingrese el nombre de la ciudad"
               aria-label="Username"
               aria-describedby="basic-addon1"
             />

@@ -96,7 +96,7 @@ const Rol = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Axios.delete(
-          `http://localhost:3300/rol/${val.id_productos}`
+          `http://localhost:3300/rol/${val.id_rol}`
         ).then(() => {
           getRol();
           limpiar();
@@ -145,7 +145,7 @@ const Rol = () => {
               Descripcion:
             </span>
             <input
-              type="number"
+              type="text"
               value={descripcion}
               onChange={(event) => {
                 setDescripcion(event.target.value);

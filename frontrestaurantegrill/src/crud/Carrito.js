@@ -171,7 +171,7 @@ const Productos = () => {
               fecha_compra:
             </span>
             <input
-              type="text"
+              type="datetime"
               value={fecha_compra}
               onChange={(event) => {
                 setFecha_compra(event.target.value);
@@ -188,7 +188,7 @@ const Productos = () => {
               fecha_pago:
             </span>
             <input
-              type="text"
+              type="datetime"
               value={fecha_pago}
               onChange={(event) => {
                 setFecha_pago(event.target.value);
@@ -205,7 +205,7 @@ const Productos = () => {
               Estado:
             </span>
             <input
-              type="number"
+              type="text"
               value={estado}
               onChange={(event) => {
                 setEstado(event.target.value);

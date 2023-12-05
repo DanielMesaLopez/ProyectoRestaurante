@@ -100,7 +100,7 @@ const  Categorias = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Axios.delete(
-          `http://localhost:3300/categoria/${val.id_productos}`
+          `http://localhost:3300/categoria/${val.id_categoria}`
         ).then(() => {
           getCategorias();
           limpiar();
