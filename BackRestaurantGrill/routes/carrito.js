@@ -8,7 +8,7 @@ const {connection} = require("../config.db");
 
 //Utilizando el método Get 
 const getCarrito = (request, response) => {
-    connection.query("SELECT * FROM carrito where estado=2", 
+    connection.query("SELECT * FROM carrito", 
     (error, results) => {
         if(error)
             throw error;
@@ -19,6 +19,7 @@ const getCarrito = (request, response) => {
 //ruta de consumo
 app.route("/carrito")
 .get(getCarrito);
+
 
 //Agregar Carrito
 const postCarrito = (request, response) => {
